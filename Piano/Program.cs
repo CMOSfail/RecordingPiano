@@ -20,9 +20,10 @@ namespace Piano
             Play(song); //Play the song (after recording)
 
             Console.Write("Would you like to save this song? (Y/N)"); //Ask the user if they want to save the song
-            synth02.Speak("Would you like to save this song? (Y/N)"); //TTS for the question
+            synth02.Speak("Would you like to save this song?"); //TTS for the question
 
             char saveFile = Console.ReadKey().KeyChar; //Take input from the user
+            Console.WriteLine(); //Enter a new line
             if (saveFile == 'Y' || saveFile == 'y') //If the user wants to save the song
             {
                 Save(song); //Save the song
@@ -39,11 +40,11 @@ namespace Piano
             Console.WriteLine("Press 'Enter' to exit.");
             synth02.Speak("Press 'Enter' to exit.");
 
-            char exit = Console.ReadKey().KeyChar; //Take input from the user
+            char exit = Console.ReadKey(true).KeyChar; //Take input from the user
 
             while (exit != 13)
             {
-                exit = Console.ReadKey().KeyChar; //Take input from the user
+                exit = Console.ReadKey(true).KeyChar; //Take input from the user
             }
 
         }
@@ -70,7 +71,7 @@ namespace Piano
 
             Console.WriteLine("-----------------------------"); //Separate the instructions from the recording
             Console.Write("Would you like to hear the instructions? (Y/N): "); //Ask the user if they would like to hear the instructions
-            synth.Speak("Would you like to hear the instructions? (Y/N): "); //TTS the request
+            synth.Speak("Would you like to hear the instructions? "); //TTS the request
             char instructions = Console.ReadKey().KeyChar; //Take input from the user
             Console.WriteLine(); //Start a new line
             if (instructions == 'Y' || instructions == 'y') //If the user wants to hear the instructions

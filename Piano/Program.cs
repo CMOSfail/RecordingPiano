@@ -19,7 +19,7 @@ namespace Piano
             
             Play(song); //Play the song (after recording)
 
-            Console.WriteLine("Would you like to save this song? (Y/N)"); //Ask the user if they want to save the song
+            Console.Write("Would you like to save this song? (Y/N)"); //Ask the user if they want to save the song
             synth02.Speak("Would you like to save this song? (Y/N)"); //TTS for the question
 
             char saveFile = Console.ReadKey().KeyChar; //Take input from the user
@@ -27,7 +27,7 @@ namespace Piano
             {
                 Save(song); //Save the song
 
-                Console.WriteLine("Finished saving the song!"); //Tell the user of the current save status
+                Console.Write("Finished saving the song!"); //Tell the user of the current save status
                 synth02.Speak("Goodbye!"); //TTS for goodbye
             }
             else //If the user doesn't want to save the song
@@ -35,6 +35,17 @@ namespace Piano
                 Console.WriteLine("Okay, goodbye!"); //Tell the user goodbye
                 synth02.Speak("Okay, goodbye!"); //TTS for goodbye
             }
+
+            Console.WriteLine("Press 'Enter' to exit.");
+            synth02.Speak("Press 'Enter' to exit.");
+
+            char exit = Console.ReadKey().KeyChar; //Take input from the user
+
+            while (exit != 13)
+            {
+                exit = Console.ReadKey().KeyChar; //Take input from the user
+            }
+
         }
         
 
@@ -61,6 +72,7 @@ namespace Piano
             Console.Write("Would you like to hear the instructions? (Y/N): "); //Ask the user if they would like to hear the instructions
             synth.Speak("Would you like to hear the instructions? (Y/N): "); //TTS the request
             char instructions = Console.ReadKey().KeyChar; //Take input from the user
+            Console.WriteLine(); //Start a new line
             if (instructions == 'Y' || instructions == 'y') //If the user wants to hear the instructions
             {
                 Instructions(); //Announce the instructions using the instructions method

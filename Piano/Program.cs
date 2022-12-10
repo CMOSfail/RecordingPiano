@@ -28,7 +28,7 @@ namespace Piano
             {
                 Save(song); //Save the song
 
-                Console.Write("Finished saving the song!"); //Tell the user of the current save status
+                Console.WriteLine("Finished saving the song!"); //Tell the user of the current save status
                 synth02.Speak("Goodbye!"); //TTS for goodbye
             }
             else //If the user doesn't want to save the song

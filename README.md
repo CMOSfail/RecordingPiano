@@ -25,6 +25,7 @@ Console.WriteLine("That is it!, You are done!");
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first
+I would love to see this project skyrocketing, adding new features and improving the current ones.
+So pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
